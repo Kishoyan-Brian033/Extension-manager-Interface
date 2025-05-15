@@ -1,8 +1,9 @@
 # Frontend Mentor - Browser extensions manager UI solution
 
-This is a solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp). Frontend Mentor challenges. 
 
-### live site  (https://extension-manager-interface.vercel.app/)
+
+## Live site  (https://extension-manager-interface.vercel.app/)
 )
 
 ## Overview
@@ -40,25 +41,49 @@ Users should be able to:
 - Mobile-first workflow
 
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
 ```html
-<h1>Some HTML code I'm proud of</h1>
+ <div class="card-top">
+             <img src="./assets/images/logo-devlens.svg" alt="logo-devlens">
+            
+               <p> <span>DevLens</span> <br>Quickly inspect page layouts and visualize element boundaries.</p>
+             </div>
+          <div class="btns-action">
+            <button class="remove-btn">Remove</button>
+
+             <i class="fa-solid fa-toggle-off"></i>
+          </div>
+        </div>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+
+.items {
+    display: grid;
+   grid-template-columns: repeat(3, 295px);
+    gap: 10px;
+    padding: 20px 0;
+    width: 100%;
+}
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+    function filterCards(filter) {
+        cards.forEach(card => {
+            const isActive = card.querySelector('.fa-toggle-on') !== null;
+            
+            switch(filter) {
+                case 'All':
+                    card.style.display = 'block';
+                    break;
+                case 'Active':
+                    card.style.display = isActive ? 'block' : 'none';
+                    break;
+                case 'Inactive':
+                    card.style.display = isActive ? 'none' : 'block';
+                    break;
+            }
+        });
 }
 ```
 ## Thanks for visiting
